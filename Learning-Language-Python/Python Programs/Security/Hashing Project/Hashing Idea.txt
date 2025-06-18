@@ -1,0 +1,19 @@
+# Program About :- A hashing program to store the password with a hash.
+
+=> In program, there will be a dictionary storing key-value pairs like "a" = "1", etc.
+=> Program will run like an interface with menu controlled by 0-9 numbers.
+
+# What it will do :-
+> Program will ask from the user for his/her details to make an account (a record in a excel file) like name, age, Email Id and a password which will be 
+  stored by the process of hashing. 
+  - like let say the users password is "cat" then at our side (in excel file) it will not be stored as "cat", our program will change the password "cat"
+  according to our hashing programme let say "123"
+
+
+# How it will :-
+> in execl file, users details will be stored and hashed password will be stored by opening the excel file and the entry will be done and then the excel file
+  will be closed.
+** > An additional text or excel file to store the actual password with hash password for knowledge purpose.
+
+# Addition to the program:
+> User can access his/her details by entering a password which will be matched with the hash password then his/her details will be displayed.
