@@ -1,8 +1,6 @@
 #include <iostream>
 using namespace std;
-
-int main()
-{
+void pattern1(){
     // Pattern 1
     /*
     1 2 3 4
@@ -11,7 +9,6 @@ int main()
     1 2 3 4
     */
 
-    /*
     int n = 4;
     for(int i = 1; i<=n; i++){ //outer loop
         for(int j = 1; j<=n; j++){ //inner loop
@@ -19,8 +16,10 @@ int main()
         }
         cout << endl;
     }
-    */
 
+}
+
+void pattern2(){
     // Pattern 2
     /*
      * * * *
@@ -29,7 +28,6 @@ int main()
      * * * *
      */
 
-    /*
     int n = 4;
     for (int i = 1; i<=n; i++){
         for (int j = 1; j<=n; j++){
@@ -37,8 +35,9 @@ int main()
         }
         cout << endl;
     }
-    */
+}
 
+void pattern3(){
     // Pattern 3
     /*
     A B C D
@@ -46,25 +45,26 @@ int main()
     A B C D
     A B C D
     */
-    /*
-     int n = 4;
-     for (int i = 0; i<n; i++){ //outter loop
-         char ch = 'A'; //why written here? because ch value is changing in the inner loop and we want pattern to start with 'A'
-         for (int j = 0; j<n; j++){ //inner loop
-             cout << ch << " ";
-             ch = ch + 1; // A is stored as 65 in the system and when we increase it by 1, number changes to 66, which is 'B' and then it is stored in ch. i.e. ch = B, this is implicit type conversion
-         }
-         cout << endl;
-     }
-     */
 
+    int n = 4;
+    for (int i = 0; i<n; i++){ //outter loop
+        char ch = 'A'; //why written here? because ch value is changing in the inner loop and we want pattern to start with 'A'
+        for (int j = 0; j<n; j++){ //inner loop
+            cout << ch << " ";
+            ch = ch + 1; // A is stored as 65 in the system and when we increase it by 1, number changes to 66, which is 'B' and then it is stored in ch. i.e. ch = B, this is implicit type conversion
+        }
+        cout << endl;
+    }
+}
+
+void pattern4(){
     // Pattern 4
     /*
     1 2 3 
     4 5 6 
     7 8 9 
     */
-   /*
+
     int n = 3;
     int num = 1;
     for (int i = 0; i<n; i++){
@@ -74,8 +74,10 @@ int main()
         }
         cout << endl;
     }
-    */
 
+}
+
+void pattern5(){
     // Pattern 5
     /*
     * 
@@ -83,7 +85,7 @@ int main()
     * * * 
     * * * *  
     */
-   /*
+
     int n = 4;
     for (int i = 0; i<n; i++){
         for (int j = 0; j<i+1; j++){ //we can use "*" * i logic to print the patter, just import (#include <string> // Needed for std::string)
@@ -91,8 +93,9 @@ int main()
         }
         cout << endl;
     }
-    */
+}
 
+void pattern6(){
     // Pattern 6
     /*
     1
@@ -100,7 +103,7 @@ int main()
     333
     4444
     */
-   /*
+
     int n = 4;
     for (int i = 1; i<=n; i++){
         for (int j = 1; j<=i; j++){
@@ -108,8 +111,9 @@ int main()
         }
         cout << endl;
     }
-    */
+}
 
+void pattern7(){
     // Pattern 7
     /*
     A
@@ -117,7 +121,6 @@ int main()
     CCC
     DDDD
     */
-   /*
     int n = 4;
     char ch = 'A';
     for (int i = 0; i<n; i++){
@@ -127,8 +130,10 @@ int main()
         ch ++;
         cout << endl;
     }
-    */
 
+}
+
+void pattern8(){
     // Pattern 8
     /*
     1
@@ -136,15 +141,17 @@ int main()
     123
     1234
     */
-   /*
+   
    int n = 4;
    for (int i = 1; i<=n; i++){
     for (int j = 1; j<=i; j++)
         cout << j;
     cout << endl;
    }
-    */
 
+}
+
+void pattern9(){
     // Pattern 9
     /*
     1
@@ -152,15 +159,15 @@ int main()
     321
     4321
     */
-   /*
     int n = 4;
     for (int i = 1; i<=n; i++){
         for (int j = i; j>=1; j--)
             cout << j;
         cout << endl;
     }
-    */
+}
 
+void pattern10(){
     // Pattern 10 (Floyd's Triangle)
     /*
     1 
@@ -168,7 +175,6 @@ int main()
     4 5 6 
     7 8 9 10 
     */
-   /*
     int n = 4, num = 1; //if want a Alphabet Floyd's triangle then change (int num) to (char ch = 'A')
     for (int i = 0; i<n; i++){
         for (int j = 0; j<=i; j++){
@@ -177,8 +183,10 @@ int main()
         }
         cout << endl;
     }
-    */
 
+}
+
+void pattern11(){
     // Pattern 11
     /*
     1111
@@ -186,7 +194,7 @@ int main()
       33
        4
     */
-   /*
+
     int n = 4;
     for (int i = 0; i<n; i++){
         for (int j = 0; j<i; j++){
@@ -197,8 +205,10 @@ int main()
         }
         cout << endl;
     }
-    */
+    
+}
 
+void pattern12(){
     // Patter 12
     /*
     AAAA
@@ -206,7 +216,7 @@ int main()
       CC
        D
     */
-   /*
+   
     int n = 4;
     char ch = 'A';
     for (int i = 0; i<n; i++){
@@ -219,8 +229,9 @@ int main()
         cout << endl;
         ch ++;
     }
-    */
+}
 
+void pattern13(){
     // Patter 13
     /*
        1
@@ -228,7 +239,7 @@ int main()
      12321
     1234321
     */
-   /*
+
     int n = 4;
     for (int i = 0 ; i < n; i++){
 
@@ -246,9 +257,11 @@ int main()
 
         cout << endl;
     }
-    */
     
-    // Patter 14 - Butterfly Pattern
+}
+
+void pattern14(){
+     // Patter 14 - Butterfly Pattern
     /*
 
     *      *
@@ -310,4 +323,50 @@ int main()
         }
         cout << endl;
     }
+}
+
+void pattern15(int n){
+    for(int i=1; i<=n; i++){
+        if(i%2!=0){
+            for (int j = 1; j<=i; j++){
+                if (j%2 !=0)
+                    cout<<1;
+                else
+                    cout<<0;
+            }
+        }
+        else{
+            for(int j = 1; j<=i; j++){
+                if(j%2 !=0)
+                    cout << 0;
+                else
+                    cout << 1;
+            }
+        }
+        cout << "\n";
+    }
+}
+
+int patternRec1(int n, int i=1, int j=1){
+    if (i>n)
+        return 0;
+    if (j > n){
+        j = 1;
+        i++;
+        cout << "\n";
+    }
+    else{
+        cout << j;
+        j++;
+    }
+    patternRec1(n, i, j);
+}
+
+int main()
+{
+    int n;
+    cout << "Enter the N value: ";
+    cin >> n;
+    patternRec1(n);
+    return 0;
 }
