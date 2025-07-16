@@ -34,7 +34,6 @@ int main() {
     // Create object of Solution class
     Solution sol;
 
-    // Call the moveZeroes function
     sol.applyOperations(nums);
 
     // Print the result
