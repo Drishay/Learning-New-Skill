@@ -71,3 +71,7 @@ body{
 .hide{
     display: none;
 }
+
+#main-heading{
+    font-size: 18vmin;
+}

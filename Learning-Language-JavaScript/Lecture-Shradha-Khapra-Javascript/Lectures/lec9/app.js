@@ -3,6 +3,7 @@ let resetBtn = document.querySelector("#reset-btn"); // accessing reset btn from
 let newGameBtn = document.querySelector("#new-btn");
 let msgContainer = document.querySelector(".msg-container");
 let msg = document.querySelector("#msg");
+let container = document.querySelector(".container");
 
 let turnO = true //if turn = true then playerO turn, else playerX turn
 
@@ -53,6 +54,8 @@ const disableBoxes = () =>{ //disable all the boxes
     for(let box of boxes){
         box.disabled = true;
     }
+    container.classList.add("hide"); //hide the tic tac toe games;
+    resetBtn.classList.add("hide"); //hide the reset button;
 }
 
 const enableBoxes = () =>{ //enable all the boxes as new game begins
@@ -60,16 +63,16 @@ const enableBoxes = () =>{ //enable all the boxes as new game begins
         box.disabled = false;
         box.innerText = ""; //empty the boxes
     }
+    container.classList.remove("hide"); //show the tic tac toe games;
+    resetBtn.classList.remove("hide"); //show the reset button;
 
 }
-
-
 
 
 const showWinner = (winner)=>{
     msg.innerText = `Congratulations, Winner is ${winner}`;
     msgContainer.classList.remove("hide");
-    disableBoxes(); //disable all the boxes as we get a winner
+    disableBoxes(); //disable all the boxes as we get a winner and hide the boxes and the reset button
 }
 
 
