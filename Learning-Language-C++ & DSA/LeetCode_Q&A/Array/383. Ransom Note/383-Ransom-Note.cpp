@@ -4,7 +4,7 @@ using namespace std;
 class Solution {
 public:
     bool canConstruct(string ransomNote, string magazine) {
-        unordered_map<char, int> freq;
+        unordered_map <char, int> freq;
 
         // Count frequency of chars in magazine
         for (char c : magazine) {
