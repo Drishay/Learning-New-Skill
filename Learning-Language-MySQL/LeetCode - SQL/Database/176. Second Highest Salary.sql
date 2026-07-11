@@ -46,3 +46,4 @@ FROM TempLowerSalaries;
 
 -- Your friend's approach explicitly saves the intermediate step first, making the final SELECT look much cleaner and easier to read
 
+ 
