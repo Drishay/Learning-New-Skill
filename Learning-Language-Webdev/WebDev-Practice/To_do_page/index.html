@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>To-Do List</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="todo-container">
+    <h1>TO DO</h1>
+    <h2>"LIST YOUR DAY"</h2>
+
+    <!-- Current Date and Time -->
+    <div id="current-date-time">
+      <span id="current-date"></span>
+      <span id="current-time"></span>
+    </div>
+
+    <!-- Input Section -->
+    <div class="todo-input">
+      <input type="text" id="new-todo" placeholder="Write the to-do">
+      <button id="add-btn">+</button>
+    </div>
+
+    <!-- To-Do List -->
+    <ul id="todo-list"></ul>
+  </div>
+
+  <script>
+    // Add To-Do Logic
+    const addBtn = document.getElementById("add-btn");
+    const newTodoInput = document.getElementById("new-todo");
+    const todoList = document.getElementById("todo-list");
+
+    function addTodo() {
+      const todoText = newTodoInput.value.trim();
+      if (todoText === "") return;
+
+      // Create a new list item
+      const listItem = document.createElement("li");
+      listItem.className = "todo-item";
+
+      // Add check button
+      const checkBtn = document.createElement("button");
+      checkBtn.className = "check-btn";
+      checkBtn.innerHTML = "✔";
+      checkBtn.addEventListener("click", () => {
+        listItem.classList.toggle("completed");
+      });
+
+      // Add todo text
+      const todoSpan = document.createElement("span");
+      todoSpan.textContent = todoText;
+
+      // Add delete button
+      const deleteBtn = document.createElement("button");
+      deleteBtn.className = "delete-btn";
+      deleteBtn.innerHTML = "✖";
+      deleteBtn.addEventListener("click", () => {
+        listItem.remove();
+      });
+
+      // Append all elements to the list item
+      listItem.appendChild(checkBtn);
+      listItem.appendChild(todoSpan);
+      listItem.appendChild(deleteBtn);
+
+      // Append the list item to the list
+      todoList.appendChild(listItem);
+
+      // Clear the input field
+      newTodoInput.value = "";
+    }
+
+    // Add button click event
+    addBtn.addEventListener("click", addTodo);
+
+    // Allow Enter key to add todos
+    newTodoInput.addEventListener("keypress", (e) => {
+      if (e.key === "Enter") {
+        addTodo();
+      }
+    });
+
+    // Display and Update Date and Time
+    function updateDateTime() {
+      const currentDateElement = document.getElementById("current-date");
+      const currentTimeElement = document.getElementById("current-time");
+      
+      const now = new Date();
+      
+      // Format date (e.g., January 25, 2025)
+      const options = { year: "numeric", month: "long", day: "numeric" };
+      currentDateElement.textContent = now.toLocaleDateString(undefined, options);
+      
+      // Format time (e.g., 10:15 AM)
+      const timeOptions = { hour: "2-digit", minute: "2-digit", second: "2-digit", hour12: true };
+      currentTimeElement.textContent = now.toLocaleTimeString(undefined, timeOptions);
+    }
+
+    // Update time every second
+    setInterval(updateDateTime, 1000);
+    updateDateTime(); // Initial call to set date and time immediately
+  </script>
+</body>
+</html>
